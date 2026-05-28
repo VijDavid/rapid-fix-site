@@ -5,10 +5,6 @@ import {
   Star, Mail, ArrowRight, Check,
 } from "lucide-react";
 import heroImg from "@/assets/hero-plumber.jpg";
-import ba1 from "@/assets/before-after-1.jpg";
-import ba2 from "@/assets/before-after-2.jpg";
-import ba3 from "@/assets/before-after-3.jpg";
-import ba4 from "@/assets/before-after-4.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -38,12 +34,6 @@ const whyUs = [
   { icon: Clock, title: "Program flexibil", desc: "Lucrăm inclusiv în weekend și sărbători." },
 ];
 
-const gallery = [
-  { img: ba1, label: "Înlocuire țevi vechi" },
-  { img: ba2, label: "Montaj baterie chiuvetă" },
-  { img: ba3, label: "Renovare grup sanitar" },
-  { img: ba4, label: "Montaj centrală termică" },
-];
 
 const reviews = [
   { name: "Andrei Popescu", area: "Sector 3", text: "Au venit în 40 de minute pentru o țeavă spartă noaptea. Profesioniști, curați, preț corect. Recomand!" },
@@ -71,7 +61,6 @@ function Index() {
       <EmergencyBanner />
       <Services />
       <WhyUs />
-      <Gallery />
       <Reviews />
       <Pricing />
       <ServiceAreas />
@@ -227,23 +216,6 @@ function WhyUs() {
   );
 }
 
-function Gallery() {
-  return (
-    <Section id="lucrari" eyebrow="Lucrări reale" title="Înainte și după" subtitle="Câteva exemple recente din intervențiile noastre în București.">
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        {gallery.map((g) => (
-          <figure key={g.label} className="group relative overflow-hidden rounded-2xl shadow-card">
-            <img src={g.img} alt={g.label} loading="lazy" width={1024} height={768}
-              className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500" />
-            <figcaption className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-navy/90 to-transparent text-navy-foreground text-sm font-medium">
-              {g.label}
-            </figcaption>
-          </figure>
-        ))}
-      </div>
-    </Section>
-  );
-}
 
 function Reviews() {
   return (
